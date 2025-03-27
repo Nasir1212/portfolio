@@ -19,4 +19,7 @@ class HomeController extends Controller
     public function blog(){
         return view('pages.user.blog');
     }
+    public function portfolio(){
+        return view('pages.user.portfolio');
+    }
 }

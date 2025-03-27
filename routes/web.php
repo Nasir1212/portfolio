@@ -12,6 +12,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/order', 'order')->name('order');
     Route::get('/blogs', 'blogs')->name('blogs');
     Route::get('/blog', 'blog')->name('blog');
+    Route::get('/portfolio', 'portfolio')->name('portfolio');
    
 });
 

@@ -4,7 +4,7 @@
     <div class="row  ">
 <a href="index.html" class="btn btn-secondary mb-3">Back to Blogs</a>
         <div class="card shadow-sm">
-            <img style="height: 27rem;width: 100%;" src="http://127.0.0.1:8000/assets/images/img-1.jpg" class="card-img-top" alt="Blog Image">
+            <img style="height: 27rem;width: 100%;" src="{{asset('assets/images/img-1.jpg')}}" class="card-img-top" alt="Blog Image">
             <div class="card-body">
                 <h2 class="card-title">Add multiple paragraphs and images if necessary to enhance the</h2>
                 <p class="text-muted">Published on March 25, 2025</p>

@@ -127,6 +127,12 @@
             }
         }
 
+        @media (max-width: 425px) {
+            .c_nav-links li {
+    margin: 0 9px;
+}
+        }
+
     </style>
 
 </head>
@@ -145,7 +151,8 @@
                             <li><a href="{{route('home')}}">Home</a></li>
                             <li><a href="{{route('order')}}">Hire Me</a></li>
                             <li><a href="{{route('blogs')}}">Blog</a></li>
-                            <li><a href="#">CV</a></li>
+                            <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
+                         
                         </ul>
                     </nav>
                 </section>
