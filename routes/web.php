@@ -21,6 +21,7 @@ Route::controller(HomeController::class)->group(function () {
 Route::middleware([])->prefix('admin')->group(function () {
     Route::controller(AdminController::class)->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
+        Route::get('/home_page', 'home_page')->name('home_page');
         
        
     });
