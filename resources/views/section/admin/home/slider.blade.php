@@ -65,3 +65,40 @@
       </div>
     </div>
   </div>
+
+  <div class="col-md-4">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalMessageTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Upload Your Slider Info</h5>
+            <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Image</label>
+                <input type="file" class="form-control"  >
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Title</label>
+                <input type="text" class="form-control" value="Creative Tim" >
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Slug</label>
+                <input type="text" class="form-control" value="Creative Tim" >
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn bg-gradient-primary">Upload</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
