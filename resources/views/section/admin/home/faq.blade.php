@@ -60,6 +60,13 @@
                   </button></td>
               </tr>
             </tbody>
+            <tfoot>
+              <tr >
+                <td style="border: none"></td>
+                <td style="border: none"> <button class="btn btn-sm btn-success">Add New</button> </td>
+
+              </tr>
+            </tfoot>
           </table>
         </div>
       </div>

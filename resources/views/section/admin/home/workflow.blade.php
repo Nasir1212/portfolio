@@ -15,71 +15,38 @@
       <div class="card-body px-0 pb-2">
         <div class="table-responsive">
           <table class="table align-items-center mb-0">
-            <thead>
-              <tr>
-                <th class="text-start text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Slide Info</th>
-                <th class="text-start text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                 
-                  <td >
-                      <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="{{asset('assets/images/img_bg_1.jpg')}}" class="w-50 " alt="user1">
+           
+              <tbody>
+                <tr>
+                    <td  style="">
+                      <div class="card h-100">
+                        <div class="card-body p-3">
+                          <h6 class="mb-0">Workflow Banner</h6>
+                           <div >
+                            <img  src="{{asset('assets/images/img_bg_1.jpg')}}" style="max-width: 600px;width:100%;height:200px" alt="">
+                           </div>
+                          <hr class="horizontal gray-light my-4">
+                          <div class="d-flex">
+                            <div>Got tips: <strong>50</strong></div>
+                            <div>Projects: <strong>760</strong></div>
+                            <div>Clients: <strong>340</strong></div>
+                            <div>Partners: <strong>50</strong></div>
                           </div>
                          
+                          <ul class="list-group">
+                            <li class="list-group-item border-0 ps-0 pt-0 text-sm"><button class="btn btn-icon btn-3 btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalMessage">
+                              <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
+                            <span class="btn-inner--text">Edit</span>
+                          </button></li>
+                           
+                          </ul>
                         </div>
-                  </td>
-                  <td><button class="btn btn-icon btn-3 btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalMessage">
-                      <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
-                    <span class="btn-inner--text">Edit</span>
-                  </button></td>
-              </tr>
-              <tr>
+                      </div>
+                    </td>
                  
-                  <td >
-                      <div class="d-flex px-2 py-1">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                              <div class="input-group input-group-alternative mb-4">
-                                <input class="form-control" placeholder="Birthday" type="text">
-                               
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                              <div class="input-group input-group-alternative mb-4">
-                                <input class="form-control" placeholder="Birthday" type="text">
-                               
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                              <div class="input-group input-group-alternative mb-4">
-                                <input class="form-control" placeholder="Birthday" type="text">
-                               
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                              <div class="input-group input-group-alternative mb-4">
-                                <input class="form-control" placeholder="Birthday" type="text">
-                               
-                              </div>
-                            </div>
-                        </div>
-                  </td>
-                  <td><button class="btn btn-icon btn-3 btn-primary" type="button">
-                      <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
-                    <span class="btn-inner--text">Edit</span>
-                  </button></td>
-              </tr>
-            </tbody>
+                </tr>
+            
+              </tbody>
           </table>
         </div>
       </div>
