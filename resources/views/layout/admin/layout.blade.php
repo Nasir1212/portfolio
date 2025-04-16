@@ -28,14 +28,14 @@
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html " target="_blank">
-        <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold">Soft UI Dashboard 3</span>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABcCAMAAADUMSJqAAAAsVBMVEX///8gR37HxsUgSX8iSoMAACoQN2XDw8MAAAB1dHFoaGjJycnR0dHh4OBfXltiYmJQUFAIL2L4+Pi5ubmkpKScnJyxsbGVlZUYQ3zX19eqqqpidJ3Z3uMAO3jT2eFxgqQANnfr6+uHh4cAH00RN2oALGNMZo1nep0vUYKYpLy0vs7L0Nl3iqq/xtMAIWqIm7IALXWQnr2IlK+os8RGXotWb5MADWmaprZqg6A3UokAAA1y1hQmAAACVElEQVRoge2Vi26bMBRAnTQbaaFrZxPz8AtnHWAMzYJh7fb/HzaTkKqVSoI0VZo0HxJy78UcXRtHAOBwOBwOh8PhcFxm82Uud/eTRBPy628Pn2fxsEbB+yThzZT86+pqFqv17dTs/TPyxSyc3Mk/Wh4PvNa8zf5K/j0npCjY4upkKVX/nn2QU045f7m10hJektegMeCRMRYzZrtmMTcZs79sTIfvcNXKV7sfuwyOd+5b0epLy5LBfN82nKqW61hQXhpDNCeKUs4KSoXgvONcCivXIJO8KQpJCanKriGH5JycQQ1FD8s9ENzAummMKUyjV6CUBPaiBbVulC7IYc0zCSpVKCUqWlegrhpF9uc7j/Mup48dUMZAY8yTqrTiDP6kPSgXHbAlZbL4JCdqv5O7RdM2oG6IatsLa85YBURGDX3WlX6StOIaPgEF7AR4a0s7KrvDbmkeFShq0j3vi7Yj9JcQdV6e67wjfRwT0sWszllWE9b3sbA5yXuSCcKYIBkh5UEuKQVAUwo1h/ZsM5tc2Ofj3h6Dwyc+BafSP/gPdXIn/y/kM1nLKXkwJb/5/Wkm6/u7Ce6n5MlyNt4kydScPhjpBa+S4RQc35PDE4SHglz6x8sQvoz0xxEXSNEmwDDESRqkPoJLFIHIJl7oIRR5oY8lwBh5SHre0ktt4KcAo/Q2wWGAMDwvx8s0RBL70RZvcArDEIFNsr1GaBMFm9SLMAIIBVsPbtOlTVCYYrhJfRltt7aDGd2PC4EAfFsZApyMheMxhsch8ELjDofD4XA4HA7HC38Aro9WZ1yiPnMAAAAASUVORK5CYII=" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold">Freelancer Tasfia </span>
       </a>
     </div>
     <hr class="horizontal dark mt-0">
 
     @include("layout.admin.aside")
-
+{{-- 
     <div class="sidenav-footer mx-3 ">
       <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
         <div class="full-background" style="background-image: url('../assets/img/curved-images/white-curved.jpg')"></div>
@@ -51,20 +51,18 @@
         </div>
       </div>
       <a class="btn btn-primary mt-3 w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree">Upgrade to pro</a>
-    </div>
+    </div> --}}
   </aside>
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <!-- Navbar -->
-    @include("layout.user.nav")
-
-
+    @include("layout.admin.nav")
     <div class="container-fluid py-4">
-       @yield('content')
+        @yield('content')
         @include("layout.admin.footer")
       </div>
  
   </main>
-  <div class="fixed-plugin">
+  {{-- <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
       <i class="fa fa-cog py-2"> </i>
     </a>
@@ -129,7 +127,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
   <!--   Core JS Files   -->
   <script src="{{asset('assets/admin/js/core/popper.min.js')}}"></script>
   <script src="{{asset('assets/admin/js/core/bootstrap.min.js')}}"></script>

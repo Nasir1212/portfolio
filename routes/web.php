@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\SliderController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -25,5 +26,8 @@ Route::middleware([])->prefix('admin')->group(function () {
         
        
     });
+
+    Route::resource('sliders', SliderController::class);
+
 });
 

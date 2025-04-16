@@ -15,12 +15,7 @@
       <div class="card-body px-0 pb-2">
         <div class="table-responsive">
           <table class="table align-items-center mb-0">
-            <thead>
-              <tr>
-                <th class="text-start text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Slide Info</th>
-                <th class="text-start text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action </th>
-              </tr>
-            </thead>
+        
             <tbody>
               <tr>
                  
@@ -30,16 +25,17 @@
                             <img src="{{asset('assets/images/img_bg_1.jpg')}}" class="avatar avatar-sm me-3" alt="user1">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">I am <br>
-                              a Marketer</h6>
-                            <p class="text-xs text-secondary mb-0">100% html5 bootstrap templates Made by colorlib.com</p>
+                            <h6 class="mb-0 text-sm">Full Stack Developer </h6>
+                            <p class="text-xs text-secondary mb-0">Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial two promise. Greatly who affixed suppose but enquire compact prepare all put. Added forth chief trees but rooms think may.</p>
+                            <p> <strong>2010-2022</strong></p>
+                            <p><button class="btn btn-icon btn-primary btn-sm " type="button" data-bs-toggle="modal" data-bs-target="#exampleModalMessage">
+                              <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
+                            <span class="btn-inner--text">Edit</span>
+                          </button></p>
                           </div>
                         </div>
                   </td>
-                  <td><button class="btn btn-icon btn-3 btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalMessage">
-                      <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
-                    <span class="btn-inner--text">Edit</span>
-                  </button></td>
+                  
               </tr>
               <tr>
                  

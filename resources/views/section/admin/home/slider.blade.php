@@ -22,16 +22,15 @@
               </tr>
             </thead>
             <tbody>
+              @foreach ($sliders as $slider)  
               <tr>
-                 
                   <td >
                       <div class="d-flex px-2 py-1">
                           <div>
                             <img src="{{asset('assets/images/img_bg_1.jpg')}}" class="avatar avatar-sm me-3" alt="user1">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">I am <br>
-                              a Marketer</h6>
+                            <h6 class="mb-0 text-sm">{{$slider->title }}</h6>
                             <p class="text-xs text-secondary mb-0">100% html5 bootstrap templates Made by colorlib.com</p>
                           </div>
                         </div>
@@ -41,24 +40,8 @@
                     <span class="btn-inner--text">Edit</span>
                   </button></td>
               </tr>
-              <tr>
-                 
-                  <td >
-                      <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="{{asset('assets/images/img_bg_1.jpg')}}" class="avatar avatar-sm me-3" alt="user1">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Frelancer Tasfia</h6>
-                            <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
-                          </div>
-                        </div>
-                  </td>
-                  <td><button class="btn btn-icon btn-3 btn-primary" type="button">
-                      <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
-                    <span class="btn-inner--text">Edit</span>
-                  </button></td>
-              </tr>
+
+              @endforeach
             </tbody>
           </table>
         </div>
