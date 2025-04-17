@@ -15,11 +15,9 @@ class AdminController extends Controller
     }
     public function home_page()
     {
-      $slidlers = Slider::all();
-   
-       return view('pages.admin.home_page', compact('slidlers'));
-      // return view('pages.admin.home_page');
-      
+      $sliders = Slider::all();
+          
+       return view('pages.admin.home_page', ['sliders'=>$sliders]);
     }
 
 

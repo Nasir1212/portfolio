@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-lg-12 col-12">
     <div class="row my-4">
-      
+    
       @include('section.admin.home.slider',['sliders'=>$sliders])
       @include('section.admin.home.about')
       @include('section.admin.home.workflow')
