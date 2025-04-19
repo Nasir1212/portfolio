@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\WorkFlowController;
+use App\Http\Controllers\Admin\SpecialtyController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -25,9 +26,15 @@ Route::middleware([])->prefix('admin')->group(function () {
     Route::resource('abouts', AboutController::class);
     Route::resource('sliders', SliderController::class);
     Route::resource('workflows', WorkFlowController::class);
+    Route::resource('specialties', SpecialtyController::class);
     Route::controller(AdminController::class)->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
         Route::get('/home_page', 'home_page')->name('home_page');
+    });
+
+    Route::controller(WorkFlowController::class)->group(function () {
+      
+        Route::post('/work_flow_update/{id}', 'update')->name('work_flow_update');
     });
 
   

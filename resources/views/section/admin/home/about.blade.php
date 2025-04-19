@@ -50,6 +50,7 @@
   </div>
 
   
+  
   <div class="col-md-4">
     <!-- Modal -->
     <div class="modal fade" id="about_modal" tabindex="-1" role="dialog" aria-labelledby="about_modal_title" aria-hidden="true">

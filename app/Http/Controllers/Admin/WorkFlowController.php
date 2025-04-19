@@ -53,8 +53,9 @@ class WorkFlowController extends Controller
      */
     public function update(Request $request, $id)
     {
+        dd($request->file('banner'));
         $request->validate([
-            'banner' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'banner' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp',
             'got_tips' => 'nullable|string|max:255',
             'projects' => 'nullable|string|max:100',
             'clients' => 'nullable|string|max:100',
@@ -63,26 +64,25 @@ class WorkFlowController extends Controller
     
         $workflow = WorkFlow::findOrFail($id);
     
+    
         if ($request->hasFile('banner')) {
             // Delete old image if exists
-            if ($workflow->banner && file_exists(public_path('uploads/banners/' . $workflow->banner))) {
-                unlink(public_path('uploads/banners/' . $workflow->banner));
+            if ($workflow->banner && \Storage::disk('public')->exists($workflow->banner)) {
+                \Storage::disk('public')->delete($workflow->banner);
             }
-    
-            $image = $request->file('banner');
-            $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/banners'), $imageName);
-    
-            $workflow->banner = $imageName;
+        
+            // Upload new image
+            $imagePath = $request->file('banner')->store('banners', 'public');
+            $workflow->banner = $imagePath;
         }
-    
+             
         $workflow->got_tips = $request->got_tips;
         $workflow->projects = $request->projects;
         $workflow->clients = $request->clients;
         $workflow->partners = $request->partners;
         $workflow->save();
     
-        return redirect()->route('work-flows.index')->with('success', 'Workflow updated successfully!');
+      //  return redirect()->route('home_page')->with('success', 'Workflow updated successfully!');
     }
 
     /**
