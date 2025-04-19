@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Slider;
+use App\Models\About;
+use App\Models\WorkFlow;
 class AdminController extends Controller
 {
     public function dashboard()
@@ -16,8 +18,9 @@ class AdminController extends Controller
     public function home_page()
     {
       $sliders = Slider::all();
-          
-       return view('pages.admin.home_page', ['sliders'=>$sliders]);
+      $about  = About::first();
+      $work_flow = WorkFlow::first(); 
+      return view('pages.admin.home_page', ['sliders'=>$sliders,'about'=>$about,'work_flow'=>$work_flow]);
     }
 
 

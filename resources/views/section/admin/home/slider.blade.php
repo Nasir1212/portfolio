@@ -27,7 +27,7 @@
                   <td >
                       <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{asset('assets/images/img_bg_1.jpg')}}" class="avatar avatar-sm me-3" alt="user1">
+                            <img src="{{ asset('storage/' . $slider->slider_img) }}" class="avatar avatar-sm me-3" alt="user1">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">{{$slider->title }}</h6>
@@ -35,7 +35,7 @@
                           </div>
                         </div>
                   </td>
-                  <td><button class="btn btn-icon btn-3 btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalMessage">
+                  <td><button class="btn btn-icon btn-3 btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#slider_modal_{{$slider->id}}">
                       <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
                     <span class="btn-inner--text">Edit</span>
                   </button></td>
@@ -48,10 +48,11 @@
       </div>
     </div>
   </div>
-
+  @foreach ($sliders as $slider)  
   <div class="col-md-4">
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalMessageTitle" aria-hidden="true">
+    <div class="modal fade" id="slider_modal_{{$slider->id}}" tabindex="-1" role="dialog" aria-labelledby="slider_modal_{{$slider->id}}_title" aria-hidden="true">
+      <form action="{{route('sliders.update',$slider->id)}}" method="POST" enctype="multipart/form-data">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -61,27 +62,29 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+              @csrf
+              @method('PUT')
               <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Image</label>
-                <input type="file" class="form-control"  >
+                <label for="slider_img" class="col-form-label">Image</label>
+                <input type="file" name="slider_img" class="form-control"  >
               </div>
               <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Title</label>
-                <input type="text" class="form-control" value="Creative Tim" >
+                <label for="title" class="col-form-label">Title</label>
+                <input type="text" class="form-control" name="title" value="{{$slider->title}}" >
               </div>
               <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Slug</label>
-                <input type="text" class="form-control" value="Creative Tim" >
+                <label for="slug" class="col-form-label">Slug</label>
+                <input type="text" class="form-control" name="slug" value="{{$slider->slug}}" >
               </div>
 
-            </form>
+            
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn bg-gradient-primary">Upload</button>
+            <button type="submit" class="btn bg-gradient-primary">Update</button>
           </div>
         </div>
       </div>
+    </form>
     </div>
   </div>
-  
+  @endforeach

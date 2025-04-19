@@ -22,14 +22,15 @@
                       <div class="card-body p-3">
                         <h6 class="mb-0"> Your about</h6>
                         <p class="text-sm">
-                          Hi I'm Jackson Ford On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.
-                          Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
+                        
+                            {!! $about->about??'' !!}
+                          
                         </p>
                         <hr class="horizontal gray-light my-4">
                         <h6 class="mb-0">Hire Toast </h6>
-                        <p>I am happy to know you that 300+ projects done sucessfully!</p>
+                        <p>{{$about->hire_toast??''}}</p>
                         <ul class="list-group">
-                          <li class="list-group-item border-0 ps-0 pt-0 text-sm"><button class="btn btn-icon btn-3 btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalMessage">
+                          <li class="list-group-item border-0 ps-0 pt-0 text-sm"><button class="btn btn-icon btn-3 btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#about_modal">
                             <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
                           <span class="btn-inner--text">Edit</span>
                         </button></li>
@@ -51,34 +52,38 @@
   
   <div class="col-md-4">
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalMessageTitle" aria-hidden="true">
+    <div class="modal fade" id="about_modal" tabindex="-1" role="dialog" aria-labelledby="about_modal_title" aria-hidden="true">
+      <form action="{{ route('abouts.update', $about->id) }}" method="POST">
       <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+          @csrf
+          @method('PUT')
+        <div class="modal-content overflow-scroll">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Upload Your Slider Info</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Upload Your About Info</h5>
             <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
           <div class="modal-body">
-            <form>
-
               <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Title</label>
-                <input type="text" class="form-control" value="Creative Tim" >
+                <label for="recipient-name" class="col-form-label">Write your about</label>
+                <x-rich-text-editor name="about" id-name="aboutEditor" value="{!!$about->about!!}" />
               </div>
               <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Slug</label>
-                <input type="text" class="form-control" value="Creative Tim" >
-              </div>
-
-            </form>
+                <label for="recipient-name" class="col-form-label">Write Hire Toast </label>
+                <input type="text" class="form-control" id="recipient-name" name="hire_toast" value="{{$about->hire_toast}}">
+              </div>           
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn bg-gradient-primary">Upload</button>
+            <button type="submit" class="btn bg-gradient-primary">Update </button>
           </div>
         </div>
       </div>
+    
     </div>
+  </from>
   </div>
+
+
+
   

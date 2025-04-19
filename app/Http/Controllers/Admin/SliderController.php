@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Slider;
 
@@ -87,7 +88,7 @@ class SliderController extends Controller
 
     $slider->update($validated);
 
-    return redirect()->route('admin.home_page')->with('success', 'Slider updated!');
+    return redirect()->route('home_page')->with('success', 'Slider updated!');
 }
 
 
