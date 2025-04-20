@@ -8,6 +8,8 @@ use App\Models\Slider;
 use App\Models\About;
 use App\Models\WorkFlow;
 use App\Models\Specialty;
+use App\Models\FAQ;
+use App\Models\Experience;
 class AdminController extends Controller
 {
     public function dashboard()
@@ -22,8 +24,10 @@ class AdminController extends Controller
       $about  = About::first();
       $work_flow = WorkFlow::first();
       $specialty = Specialty::all();
+      $faq = FAQ::all();
+      $experience = Experience::all();
       
-      return view('pages.admin.home_page', ['sliders'=>$sliders,'about'=>$about,'work_flow'=>$work_flow,'specialty'=>$specialty]);
+      return view('pages.admin.home_page', ['sliders'=>$sliders,'about'=>$about,'work_flow'=>$work_flow,'specialty'=>$specialty,'faq'=>$faq,'experience'=>$experience]);
     }
 
 

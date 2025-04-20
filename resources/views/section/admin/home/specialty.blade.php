@@ -45,104 +45,34 @@
               <tr>
                   <td >
                     <ul class="list-group">
-
+                      @foreach ($specialty->slice(1) as $sp )
+                      @php
+                          $skill = json_decode($sp->content, true);
+                         
+                      @endphp
                       <li class="list-group-item border-0 d-flex align-items-center px-0 mb-0 ">
-                        <div style="max-width:30rem;width:100%" class="d-flex">
+                        <div style="max-width:40rem;width:100%" class="d-flex">
                         <div class="w-100">
                           <div class="d-flex mb-2">
-                            <span class="me-2 text-sm font-weight-bold text-dark">Positive Reviews</span>
-                            <span class="ms-auto text-sm font-weight-bold">80%</span>
+                            <span class="me-2 text-sm font-weight-bold text-dark">{{  $skill[0] }}</span>
+                            <span class="ms-auto text-sm font-weight-bold">{{ $skill[1]}}%</span>
                           </div>
                           <div>
                             <div class="progress progress-md c_progress">
-                              <div class="progress-bar bg-primary w-80" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                              <div style="background: {{  $skill[2] }}" class="progress-bar  w-{{  $skill[1] }}" role="progressbar" aria-valuenow="{{  $skill[1] }}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                           </div>
                         </div>
                         <a href="" class="btn btn-sm btn-danger">delete</a>
                       </div>
                       </li>
-
-                   
-                      <li class="list-group-item border-0 d-flex align-items-center px-0 mb-0 ">
-                        <div style="max-width:30rem;width:100%" class="d-flex">
-                        <div class="w-100">
-                          <div class="d-flex mb-2">
-                            <span class="me-2 text-sm font-weight-bold text-dark">Positive Reviews</span>
-                            <span class="ms-auto text-sm font-weight-bold">80%</span>
-                          </div>
-                          <div>
-                            <div class="progress progress-md c_progress">
-                              <div class="progress-bar bg-primary w-80" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </div>
-                        </div>
-                        <a href="" class="btn btn-sm btn-danger">delete</a>
-                      </div>
-                      </li>
-
-                  
-                      <li class="list-group-item border-0 d-flex align-items-center px-0 mb-0 ">
-                        <div style="max-width:30rem;width:100%" class="d-flex">
-                        <div class="w-100">
-                          <div class="d-flex mb-2">
-                            <span class="me-2 text-sm font-weight-bold text-dark">Positive Reviews</span>
-                            <span class="ms-auto text-sm font-weight-bold">80%</span>
-                          </div>
-                          <div>
-                            <div class="progress progress-md c_progress">
-                              <div class="progress-bar bg-primary w-80" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </div>
-                        </div>
-                        <a href="" class="btn btn-sm btn-danger">delete</a>
-                      </div>
-                      </li>
-
-                  
-                      <li class="list-group-item border-0 d-flex align-items-center px-0 mb-0 ">
-                        <div style="max-width:30rem;width:100%" class="d-flex">
-                        <div class="w-100">
-                          <div class="d-flex mb-2">
-                            <span class="me-2 text-sm font-weight-bold text-dark">Positive Reviews</span>
-                            <span class="ms-auto text-sm font-weight-bold">80%</span>
-                          </div>
-                          <div>
-                            <div class="progress progress-md c_progress">
-                              <div class="progress-bar bg-primary w-80" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </div>
-                        </div>
-                        <a href="" class="btn btn-sm btn-danger">delete</a>
-                      </div>
-                      </li>
-
-                  
-                      <li class="list-group-item border-0 d-flex align-items-center px-0 mb-0 ">
-                        <div style="max-width:30rem;width:100%" class="d-flex">
-                        <div class="w-100">
-                          <div class="d-flex mb-2">
-                            <span class="me-2 text-sm font-weight-bold text-dark">Positive Reviews</span>
-                            <span class="ms-auto text-sm font-weight-bold">60%</span>
-                          </div>
-                          <div>
-                            <div class="progress progress-md c_progress">
-                              <div class="progress-bar bg-primary w-80" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </div>
-                        </div>
-                        <a href="" class="btn btn-sm btn-danger">delete</a>
-                      </div>
-                      </li>
-
+                      @endforeach
                     </ul>
                   </td>
-                 
               </tr>
             </tbody>
             <footer>
               <tr>
-                
                 <td class="float-end"><button class="btn btn-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#skill_adding_modal">Add Skill</button></td>
               </tr>
             </footer>
@@ -152,35 +82,6 @@
     </div>
   </div>
 
-  <div class="col-md-4">
-    <!-- Modal -->
-    <div class="modal fade" id="about_skill_1" tabindex="-1" role="dialog" aria-labelledby="about_skill_title" aria-hidden="true">
-      <form action="{{ route('specialties.update',$specialty[0]->id) }}" method="POST">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Upload Briefing About Your Skill Info</h5>
-            <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              @csrf
-              @method('PUT')
-            
-              <div class="form-group">
-                <label for="slug" class="col-form-label">About Your Skill</label>
-                <x-rich-text-editor name="content" id-name="contentEditor" value="{!!$specialty[0]->content!!}" />
-              </div>            
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn bg-gradient-primary">Update</button>
-          </div>
-        </div>
-      </div>
-    </form>
-    </div>
-  </div>
 
   <div class="col-md-4">
     <!-- Modal -->

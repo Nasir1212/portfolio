@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\WorkFlowController;
 use App\Http\Controllers\Admin\SpecialtyController;
+use App\Http\Controllers\Admin\FAQController;
+use App\Http\Controllers\Admin\ExperienceController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -27,6 +29,8 @@ Route::middleware([])->prefix('admin')->group(function () {
     Route::resource('sliders', SliderController::class);
     Route::resource('workflows', WorkFlowController::class);
     Route::resource('specialties', SpecialtyController::class);
+    Route::resource('faqs', FAQController::class);
+    Route::resource('experiences', ExperienceController::class);
     Route::controller(AdminController::class)->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
         Route::get('/home_page', 'home_page')->name('home_page');

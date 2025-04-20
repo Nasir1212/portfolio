@@ -34,9 +34,14 @@ class SpecialtyController extends Controller
         'skill_range' => 'required|string|max:3',
         'skill_color' => 'required|string',
     ]);
+    $data = json_encode([
+        $request['skill_name'],
+        $request['skill_range'],
+        $request['skill_color'],
+    ]);
 
     Specialty::create([
-        'content' => $validated['content'] // store as JSON
+        'content' => $data // store as JSON
     ]);
 
     return redirect()->back()->with('success', 'Skill saved successfully!');
