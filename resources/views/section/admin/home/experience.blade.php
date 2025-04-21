@@ -15,7 +15,12 @@
       <div class="card-body px-0 pb-2">
         <div class="table-responsive">
           <table class="table align-items-center mb-0">
-        
+            <thead>
+              <tr>
+                <td>Info</td>
+                <td>Action</td>
+              </tr>
+            </thead>
             <tbody>
             @foreach ($experience as $e )    
               <tr>
@@ -61,7 +66,7 @@
   </div>
 
 
-  
+  @push("mymodal")
   <div class="col-md-4">
     <!-- Modal -->
     <div class="modal fade" id="experience_modal_1" tabindex="-1" role="dialog" aria-labelledby="experience_modal_1" aria-hidden="true">
@@ -145,3 +150,5 @@
     </div>
   </div>
   @endforeach
+
+  @endpush

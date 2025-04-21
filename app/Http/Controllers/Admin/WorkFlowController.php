@@ -51,9 +51,8 @@ class WorkFlowController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, WorkFlow $workflow)
     {
-        dd($request->file('banner'));
         $request->validate([
             'banner' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp',
             'got_tips' => 'nullable|string|max:255',
@@ -62,29 +61,24 @@ class WorkFlowController extends Controller
             'partners' => 'nullable|string|max:100',
         ]);
     
-        $workflow = WorkFlow::findOrFail($id);
-    
-    
         if ($request->hasFile('banner')) {
-            // Delete old image if exists
             if ($workflow->banner && \Storage::disk('public')->exists($workflow->banner)) {
                 \Storage::disk('public')->delete($workflow->banner);
             }
-        
-            // Upload new image
+    
             $imagePath = $request->file('banner')->store('banners', 'public');
             $workflow->banner = $imagePath;
         }
-             
+    
         $workflow->got_tips = $request->got_tips;
         $workflow->projects = $request->projects;
         $workflow->clients = $request->clients;
         $workflow->partners = $request->partners;
         $workflow->save();
     
-      //  return redirect()->route('home_page')->with('success', 'Workflow updated successfully!');
+        return redirect()->route('home_page')->with('success', 'Workflow updated successfully!');
     }
-
+    
     /**
      * Remove the specified resource from storage.
      */

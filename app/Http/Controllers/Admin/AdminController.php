@@ -22,12 +22,12 @@ class AdminController extends Controller
     {
       $sliders = Slider::all();
       $about  = About::first();
-      $work_flow = WorkFlow::first();
+      $workflow = WorkFlow::first();
       $specialty = Specialty::all();
       $faq = FAQ::all();
       $experience = Experience::all();
       
-      return view('pages.admin.home_page', ['sliders'=>$sliders,'about'=>$about,'work_flow'=>$work_flow,'specialty'=>$specialty,'faq'=>$faq,'experience'=>$experience]);
+      return view('pages.admin.home_page', ['sliders'=>$sliders,'about'=>$about,'workflow'=>$workflow,'specialty'=>$specialty,'faq'=>$faq,'experience'=>$experience]);
     }
 
 
