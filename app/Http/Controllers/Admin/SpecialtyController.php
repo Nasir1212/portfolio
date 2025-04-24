@@ -76,7 +76,7 @@ class SpecialtyController extends Controller
         
        
         $specialty->update($validated);
-        return redirect()->route('home_page')->with('success', 'Slider updated!');
+        return redirect()->route('admin.home_page')->with('success', 'Slider updated!');
     }
 
     /**

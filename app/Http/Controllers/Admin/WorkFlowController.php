@@ -76,7 +76,7 @@ class WorkFlowController extends Controller
         $workflow->partners = $request->partners;
         $workflow->save();
     
-        return redirect()->route('home_page')->with('success', 'Workflow updated successfully!');
+        return redirect()->route('admin.home_page')->with('success', 'Workflow updated successfully!');
     }
     
     /**

@@ -52,7 +52,7 @@
   <div class="col-md-4">
     <!-- Modal -->
     <div class="modal fade" id="slider_modal_{{$slider->id}}" tabindex="-1" role="dialog" aria-labelledby="slider_modal_{{$slider->id}}_title" aria-hidden="true">
-      <form action="{{route('sliders.update',$slider->id)}}" method="POST" enctype="multipart/form-data">
+      <form action="{{route('admin.sliders.update',$slider->id)}}" method="POST" enctype="multipart/form-data">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">

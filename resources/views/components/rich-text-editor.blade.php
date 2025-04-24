@@ -13,7 +13,7 @@
     </div>
 
     <div id="{{ $idName }}" contenteditable="true" class="form-control editor" style="min-height: 120px;"> {!!$value!!} </div>
-    <input type="hidden" name="{{ $name }}" id="hidden-{{ $idName }}" >
+    <input type="hidden" name="{{ $name }}" id="hidden-{{ $idName }}" value="{!! $value !!}" >
 </div>
 
 @push('scripts')

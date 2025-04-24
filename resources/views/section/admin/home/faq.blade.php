@@ -39,7 +39,7 @@
                     <span class="btn-inner--text">Edit</span>
                   </button>
 
-                  <form action="{{ route('faqs.destroy', $f->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this FAQ?');">
+                  <form action="{{ route('admin.faqs.destroy', $f->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this FAQ?');">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn bg-gradient-danger btn-sm ">Delete</button>
@@ -65,7 +65,7 @@
   <div class="col-md-4">
     <!-- Modal -->
     <div class="modal fade" id="faq_modal_1" tabindex="-1" role="dialog" aria-labelledby="faq_modal_title" aria-hidden="true">
-      <form action="{{ route('faqs.store') }}" method="POST">
+      <form action="{{ route('admin.faqs.store') }}" method="POST">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -100,7 +100,7 @@
   <div class="col-md-4">
     <!-- Modal -->
     <div class="modal fade" id="faq_modal_edit_{{ $f->id }}" tabindex="-1" role="dialog" aria-labelledby="faq_modal_title" aria-hidden="true">
-      <form action="{{ route('faqs.update',$f->id) }}" method="POST">
+      <form action="{{ route('admin.faqs.update',$f->id) }}" method="POST">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">

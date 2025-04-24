@@ -54,7 +54,7 @@
   <div class="col-md-4">
     <!-- Modal -->
     <div class="modal fade" id="workflow_modal_1" tabindex="-1" role="dialog" aria-labelledby="skill_adding_modal_title" aria-hidden="true">
-      <form action="{{ route('workflows.update',$workflow->id) }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('admin.workflows.update',$workflow->id) }}" method="POST" enctype="multipart/form-data">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">

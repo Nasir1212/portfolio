@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\WorkFlowController;
 use App\Http\Controllers\Admin\SpecialtyController;
 use App\Http\Controllers\Admin\FAQController;
 use App\Http\Controllers\Admin\ExperienceController;
+use App\Http\Controllers\Admin\BlogController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -24,16 +25,20 @@ Route::controller(HomeController::class)->group(function () {
 });
 
 
-Route::middleware([])->prefix('admin')->group(function () {
+Route::middleware([])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('abouts', AboutController::class);
     Route::resource('sliders', SliderController::class);
     Route::resource('workflows', WorkFlowController::class);
     Route::resource('specialties', SpecialtyController::class);
     Route::resource('faqs', FAQController::class);
     Route::resource('experiences', ExperienceController::class);
+    Route::resource('blogs', BlogController::class);
+
+
     Route::controller(AdminController::class)->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
         Route::get('/home_page', 'home_page')->name('home_page');
+        Route::get('/blogs_page', 'blogs_page')->name('blogs_page');
     });
 
     Route::controller(WorkFlowController::class)->group(function () {

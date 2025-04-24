@@ -42,7 +42,7 @@ class SliderController extends Controller
         'slider_img' => $imagePath,
     ]);
 
-    return redirect()->route('sliders.index')->with('success', 'Slider created!');
+    return redirect()->route('admin.sliders.index')->with('success', 'Slider created!');
 }
 
 
@@ -88,7 +88,7 @@ class SliderController extends Controller
 
     $slider->update($validated);
 
-    return redirect()->route('home_page')->with('success', 'Slider updated!');
+    return redirect()->route('admin.home_page')->with('success', 'Slider updated!');
 }
 
 

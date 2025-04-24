@@ -41,7 +41,7 @@
                       <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
                     <span class="btn-inner--text">Edit</span>
                   </button>
-                  <form action="{{ route('experiences.destroy', $e->id) }}" method="POST" onsubmit="return confirm('Are you sure to delete this experience?');">
+                  <form action="{{ route('admin.experiences.destroy', $e->id) }}" method="POST" onsubmit="return confirm('Are you sure to delete this experience?');">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger btn-sm" type="submit">Delete</button>
@@ -70,7 +70,7 @@
   <div class="col-md-4">
     <!-- Modal -->
     <div class="modal fade" id="experience_modal_1" tabindex="-1" role="dialog" aria-labelledby="experience_modal_1" aria-hidden="true">
-      <form action="{{ route('experiences.store') }}" method="POST">
+      <form action="{{ route('admin.experiences.store') }}" method="POST">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -111,7 +111,7 @@
   <div class="col-md-4">
     <!-- Modal -->
     <div class="modal fade" id="experience_modal_edit_{{ $e->id }}" tabindex="-1" role="dialog" aria-labelledby="faq_modal_title" aria-hidden="true">
-      <form action="{{ route('experiences.update',$e->id) }}" method="POST">
+      <form action="{{ route('admin.experiences.update',$e->id) }}" method="POST">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">

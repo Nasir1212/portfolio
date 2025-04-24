@@ -86,7 +86,7 @@
   <div class="col-md-4">
     <!-- Modal -->
     <div class="modal fade" id="skill_adding_modal" tabindex="-1" role="dialog" aria-labelledby="skill_adding_modal_title" aria-hidden="true">
-      <form action="{{ route('specialties.store') }}" method="POST">
+      <form action="{{ route('admin.specialties.store') }}" method="POST">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">

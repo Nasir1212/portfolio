@@ -54,7 +54,7 @@
   <div class="col-md-4">
     <!-- Modal -->
     <div class="modal fade" id="about_modal" tabindex="-1" role="dialog" aria-labelledby="about_modal_title" aria-hidden="true">
-      <form action="{{ route('abouts.update', $about->id) }}" method="POST">
+      <form action="{{ route('admin.abouts.update', $about->id) }}" method="POST">
       <div class="modal-dialog modal-dialog-centered" role="document">
           @csrf
           @method('PUT')
