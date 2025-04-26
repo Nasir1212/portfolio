@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\SpecialtyController;
 use App\Http\Controllers\Admin\FAQController;
 use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\PortfolioController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -33,6 +34,7 @@ Route::middleware([])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('faqs', FAQController::class);
     Route::resource('experiences', ExperienceController::class);
     Route::resource('blogs', BlogController::class);
+    Route::resource('portfolios', PortfolioController::class);
 
 
     Route::controller(AdminController::class)->group(function () {
