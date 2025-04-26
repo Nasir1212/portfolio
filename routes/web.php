@@ -35,6 +35,9 @@ Route::middleware([])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('experiences', ExperienceController::class);
     Route::resource('blogs', BlogController::class);
     Route::resource('portfolios', PortfolioController::class);
+    Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
+     Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class);
+     Route::resource('social-links', \App\Http\Controllers\Admin\SocialLinkController::class);
 
 
     Route::controller(AdminController::class)->group(function () {

@@ -4,11 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Portfolio extends Model
+class Order extends Model
 {
     protected $fillable = [
-        'title',
-        'image',
-        'description',
+        'name', 'phone', 'email', 'service', 'price', 'essential_file', 'details'
     ];
 }

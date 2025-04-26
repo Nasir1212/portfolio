@@ -41,7 +41,7 @@
                       <div class="col-sm-12 col-md-6 col-lg-6">
                     <div class="mb-3">
                         <label for="phone" class="form-label">Your name</label>
-                        <input type="tel" id="phone" placeholder="Enter your name" name="phone" class="form-control" required>
+                        <input type="tel" id="phone" placeholder="Enter your name" name="name" class="form-control" required>
                     </div>
                       </div>
                       <div class="col-sm-12 col-md-6 col-lg-6">
@@ -65,13 +65,13 @@
                     <div class="col-sm-12 col-md-6 col-lg-6">
                     <div class="mb-3">
                         <label for="service" class="form-label">Service price</label>
-                        <input type="text" id="service" placeholder="Enter service price" name="service" class="form-control" required>
+                        <input type="text" id="service" placeholder="Enter service price" name="price" class="form-control" required>
                     </div>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-6">
                     <div class="mb-3">
                         <label for="file" class="form-label">Essential File</label>
-                        <input type="file" id="file" name="file" class="form-control" required>
+                        <input type="file" id="file" name="essential_file" class="form-control" required>
                     </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-12">
