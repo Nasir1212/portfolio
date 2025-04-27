@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\FAQController;
 use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\PortfolioController;
+use App\Http\Controllers\Admin\MessageController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -36,9 +37,11 @@ Route::middleware([])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('blogs', BlogController::class);
     Route::resource('portfolios', PortfolioController::class);
     Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
-     Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class);
-     Route::resource('social-links', \App\Http\Controllers\Admin\SocialLinkController::class);
-
+    Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class);
+    Route::resource('social-links', \App\Http\Controllers\Admin\SocialLinkController::class);
+    Route::resource('messages', MessageController::class)->only([
+        'index', 'store', 'update', 'destroy'
+    ]);;
 
     Route::controller(AdminController::class)->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');

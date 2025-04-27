@@ -138,6 +138,19 @@
         <span class="nav-link-text ms-1">Social Link</span>
       </a>
     </li>
+
+    <li class="nav-item">
+      <a class="nav-link {{ request()->routeIs('admin.messages.index') ? 'active' : '' }}" href="{{ route('admin.messages.index') }}">
+        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+          <!-- Message Icon SVG -->
+          <svg width="12px" height="12px" viewBox="0 0 24 24" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 5C2 3.89543 2.89543 3 4 3H20C21.1046 3 22 3.89543 22 5V19C22 20.1046 21.1046 21 20 21H4C2.89543 21 2 20.1046 2 19V5Z" stroke="#5e72e4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 5L12 13L2 5" stroke="#5e72e4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="nav-link-text ms-1">Messages</span>
+      </a>
+    </li>
       <li class="nav-item mt-3">
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
       </li>
