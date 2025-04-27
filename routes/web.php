@@ -39,6 +39,8 @@ Route::middleware([])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
     Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class);
     Route::resource('social-links', \App\Http\Controllers\Admin\SocialLinkController::class);
+    Route::resource('msgs', \App\Http\Controllers\Admin\MsgController::class);
+    
     Route::resource('messages', MessageController::class)->only([
         'index', 'store', 'update', 'destroy'
     ]);;

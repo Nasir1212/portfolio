@@ -1,10 +1,9 @@
-@extends('layouts.admin')
-
+@extends('layout.admin.layout')
 @section('content')
 <div class="container">
-    <h1>Messages</h1>
-
-    <table class="table table-striped">
+    <h5>Messages</h5>
+<div class="card">
+    <table class="table align-items-center mb-0">
         <thead>
             <tr>
                 <th>Name</th>
@@ -59,5 +58,6 @@
             @endforeach
         </tbody>
     </table>
+</div>
 </div>
 @endsection
