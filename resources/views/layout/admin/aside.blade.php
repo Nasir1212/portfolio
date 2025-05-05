@@ -151,7 +151,7 @@
         <span class="nav-link-text ms-1">Messages</span>
       </a>
     </li>
-    <li class="nav-item">
+    {{-- <li class="nav-item">
       <a class="nav-link {{ request()->routeIs('admin.siteinfo.index') ? 'active' : '' }}" href="{{ route('admin.siteinfo.index') }}">
         <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
           <!-- Message Icon SVG -->
@@ -162,7 +162,48 @@
         </div>
         <span class="nav-link-text ms-1">Site Info</span>
       </a>
+    </li> --}}
+
+    <li class="nav-item">
+      <a class="nav-link {{ request()->routeIs('admin.siteinfo.*') ? 'active' : '' }}" href="{{ route('admin.siteinfo.index') }}">
+        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+          <!-- Info Icon SVG -->
+          <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#5e72e4" stroke-width="2"/>
+            <path d="M12 16V12" stroke="#5e72e4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="8" r="1" fill="#5e72e4"/>
+          </svg>
+        </div>
+        <span class="nav-link-text ms-1">Site Info</span>
+      </a>
     </li>
+
+    <li class="nav-item">
+      <a class="nav-link {{ request()->routeIs('admin.theme-colors.*') ? 'active' : '' }}" href="{{ route('admin.theme-colors.index') }}">
+        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+          <!-- Paint Bucket Icon SVG -->
+          <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 11L14 6L6 14L11 19L19 11Z" stroke="#5e72e4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 20C5.82843 20 6.5 19.3284 6.5 18.5C6.5 17.6716 5.82843 17 5 17C4.17157 17 3.5 17.6716 3.5 18.5C3.5 19.3284 4.17157 20 5 20Z" stroke="#5e72e4" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="nav-link-text ms-1">Theme Color</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link {{ request()->routeIs('admin.payment-methods.*') ? 'active' : '' }}" href="{{ route('admin.payment-methods.index') }}">
+        <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+          <!-- Paint Bucket Icon SVG -->
+          <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 11L14 6L6 14L11 19L19 11Z" stroke="#5e72e4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 20C5.82843 20 6.5 19.3284 6.5 18.5C6.5 17.6716 5.82843 17 5 17C4.17157 17 3.5 17.6716 3.5 18.5C3.5 19.3284 4.17157 20 5 20Z" stroke="#5e72e4" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="nav-link-text ms-1">Payment Method </span>
+      </a>
+    </li>
+
+
       {{-- <li class="nav-item mt-3">
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
       </li>

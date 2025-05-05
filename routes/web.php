@@ -13,6 +13,9 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\SiteInfoController;
+use App\Http\Controllers\Admin\ThemeColorController;
+use App\Http\Controllers\Admin\PaymentMethodController;
+use App\Http\Controllers\Admin\AuthController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -42,6 +45,8 @@ Route::middleware([])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('social-links', \App\Http\Controllers\Admin\SocialLinkController::class);
     Route::resource('msgs', \App\Http\Controllers\Admin\MsgController::class);
     Route::resource('siteinfo', SiteInfoController::class);
+    Route::resource('theme-colors', ThemeColorController::class);
+    Route::resource('payment-methods', PaymentMethodController::class);
 
     Route::resource('messages', MessageController::class)->only([
         'index', 'store', 'update', 'destroy'
@@ -60,6 +65,21 @@ Route::middleware([])->prefix('admin')->name('admin.')->group(function () {
 
   
 
+});
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::middleware('guest:admin')->group(function () {
+        Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
+        Route::post('login', [AuthController::class, 'login'])->name('login.submit');
+    });
+
+    // Route::middleware('auth:admin')->group(function () {
+    //     Route::get('dashboard', function () {
+    //         return view('admin.dashboard');
+    //     })->name('dashboard');
+
+    //     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+    // });
 });
 
 Route::get('/link-storage', function () {
