@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\MessageController;
+use App\Http\Controllers\Admin\SiteInfoController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -40,7 +41,8 @@ Route::middleware([])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class);
     Route::resource('social-links', \App\Http\Controllers\Admin\SocialLinkController::class);
     Route::resource('msgs', \App\Http\Controllers\Admin\MsgController::class);
-    
+    Route::resource('siteinfo', SiteInfoController::class);
+
     Route::resource('messages', MessageController::class)->only([
         'index', 'store', 'update', 'destroy'
     ]);;
