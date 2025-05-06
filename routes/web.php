@@ -31,7 +31,7 @@ Route::controller(HomeController::class)->group(function () {
 });
 
 
-Route::middleware([])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('abouts', AboutController::class);
     Route::resource('sliders', SliderController::class);
     Route::resource('workflows', WorkFlowController::class);
@@ -62,7 +62,7 @@ Route::middleware([])->prefix('admin')->name('admin.')->group(function () {
       
         Route::post('/work_flow_update/{id}', 'update')->name('work_flow_update');
     });
-
+    Route::post('logout', [AuthController::class, 'logout'])->name('logout');
   
 
 });
@@ -73,14 +73,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('login', [AuthController::class, 'login'])->name('login.submit');
     });
 
-    // Route::middleware('auth:admin')->group(function () {
-    //     Route::get('dashboard', function () {
-    //         return view('admin.dashboard');
-    //     })->name('dashboard');
 
-    //     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
-    // });
 });
+
+Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
+
 
 Route::get('/link-storage', function () {
     Artisan::call('storage:link');

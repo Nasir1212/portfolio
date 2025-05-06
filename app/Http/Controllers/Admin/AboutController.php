@@ -62,7 +62,7 @@ class AboutController extends Controller
         $about->hire_toast = $request->input('hire_toast');
         $about->save();
     
-        return redirect()->route('home_page')->with('success', 'About section updated successfully!');
+        return redirect()->back()->with('success', 'About section updated successfully!');
     }
 
     /**

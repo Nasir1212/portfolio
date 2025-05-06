@@ -821,11 +821,19 @@ body.offcanvas .colorlib-nav-toggle {
     border-bottom: 2px solid #4054b2;
 }
 
-.services {
+/* .services {
     margin-bottom: 30px;
     position: relative;
     z-index: 0;
     height: 25rem;
+    overflow: hidden;
+} */
+
+.services {
+    margin-bottom: -64px;
+    position: relative;
+    z-index: 0;
+    height: 40rem;
     overflow: hidden;
 }
 @media screen and (max-width: 768px) {

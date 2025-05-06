@@ -3,38 +3,29 @@
 <section id="colorlib-hero" class="js-fullheight" data-section="home">
     <div class="flexslider js-fullheight">
         <ul class="slides">
-            <li style="background-image: url({{asset('assets/images/img_bg_1.jpg')}});">
+            @foreach ($sliders as $slider)
+                
+        
+            <li style="background-image: url({{ asset('storage/' . $slider->slider_img) }});">
                 <div class="overlay"></div>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
                             <div class="slider-text-inner js-fullheight">
                                 <div class="desc">
-                                    <h1>Hi! <br>I'm Tasfia</h1>
-                                    <h2>100% html5 bootstrap templates Made by <a href="https://colorlib.com/" target="_blank">colorlib.com</a></h2>
-                                    <p><a class="btn btn-primary btn-learn">Download CV  <i class="fas fa-download"></i></a></p>
+                                    <h1>{{ $slider->title}}</h1>
+                                    <h2>{{$slider->slug}} 
+                                        {{-- <a href="https://colorlib.com/" target="_blank">colorlib.com</a> --}}
+                                    </h2>
+                                    {{-- <p><a class="btn btn-primary btn-learn">Download CV  <i class="fas fa-download"></i></a></p> --}}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </li>
-            <li style="background-image: url({{asset('assets/images/img_bg_2.jpg')}});">
-                <div class="overlay"></div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-                            <div class="slider-text-inner">
-                                <div class="desc">
-                                    <h1>I am <br>a Marketer</h1>
-                                    <h2>100% html5 bootstrap templates Made by <a href="https://colorlib.com/" target="_blank">colorlib.com</a></h2>
-                                    <p><a class="btn btn-primary btn-learn">View Portfolio <i class="fas fa-briefcase"></i></a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
+            @endforeach
+          
         </ul>
     </div>
 </section>
@@ -48,10 +39,7 @@
                         <div class="about-desc">
                             <span class="heading-meta">About Us</span>
                             <h2 class="colorlib-heading">Who Am I?</h2>
-                            <p><strong>Hi I'm Jackson Ford</strong> On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from
-                                its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
-                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World
-                                of Grammar.</p>
+                            <p>{!!$about->about!!}</p>
                         </div>
                     </div>
                 </div>
@@ -84,7 +72,7 @@
                 <div class="row">
                     <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
                         <div class="hire">
-                            <h2>I am happy to know you <br>that 300+ projects done sucessfully!</h2>
+                            <h2>{{$about->hire_toast}}</h2>
                             <a href="{{route('order')}}" class="btn-sm  btn-hire">Hire me</a>
                         </div>
                     </div>
@@ -106,25 +94,30 @@
         </div>
 
         <div class="row ">
+            @foreach ($services as $service)
             <div class="col-md-4 text-center animate-box">
+                
                 <div class="services color-1">
                     <div>
                         <h6 style="margin-bottom:5px;text-align:start">My Service</h6>
                     </div>
+                    <div>
+                        <img style="height:10rem" src="{{ asset('storage/'.$service->image) }}" alt="">
+                    </div>
                
                     <div class="desc">
-                        <h3>Facebook Business Page Optimization </h3>
-                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
+                        <h3>{{$service->title}} </h3>
+                        <p>{{$service->toast}}</p>
                     </div>
                     <div>
-                        <h4 style="text-align: start">Price : <strong>100$</strong></h4>
+                        <h4 style="text-align: start">Price : <strong>{{$service->price}}</strong></h4>
                         <a href="#" class=" btn_primary">👋 Hire Me</a>
                     </div>
                 </div>
             </div>   
-
+@endforeach
             
-            <div class="col-md-4 text-center animate-box">
+            {{-- <div class="col-md-4 text-center animate-box">
                 <div class="services color-1">
                     <div>
                         <h6 style="margin-bottom:5px;text-align:start">My Service</h6>
@@ -212,7 +205,7 @@
                         <a href="#" class=" btn_primary">👋 Hire Me</a>
                     </div>
                 </div>
-            </div>   
+            </div>    --}}
 
 
         </div>
