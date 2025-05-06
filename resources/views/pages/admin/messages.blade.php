@@ -25,7 +25,7 @@
                     </button>
 
                     <!-- Delete Button (optional) -->
-                    <form action="{{ route('admin.messages.destroy', $message) }}" method="POST" class="d-inline">
+                    <form action="{{ route('admin.msgs.destroy', $message->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
                         <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">Delete</button>

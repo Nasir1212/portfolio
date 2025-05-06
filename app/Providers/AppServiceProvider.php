@@ -11,6 +11,12 @@ use App\Models\Specialty;
 use App\Models\FAQ;
 use App\Models\Experience;
 use App\Models\Service;
+use App\Models\Portfolio;
+use App\Models\Blog;
+use App\Models\SocialLink;
+use App\Models\SiteInfo;
+
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -26,15 +32,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::composer('pages.user.home', function ($view) {
+        View::composer('*', function ($view) {
             $view->with([
                 'sliders' => Slider::all(),
                 'about' => About::first(),
                 'workflow' => WorkFlow::first(),
                 'specialty' => Specialty::all(),
-                'faq' => FAQ::all(),
-                'experience' => Experience::all(),
+                'faqs' => FAQ::all(),
+                'experiences' => Experience::all(),
                 'services' => Service::all(),
+                'portfolios' => Portfolio::latest('id')->take(4)->get(),
+                'blogs' => Blog::latest('id')->take(4)->get(),
+                'site_info' => SiteInfo::latest('id')->first(),
+                'social_link' => SocialLink::latest('id')->first()
             ]);
         });
     }

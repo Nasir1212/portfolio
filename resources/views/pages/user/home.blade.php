@@ -111,7 +111,7 @@
                     </div>
                     <div>
                         <h4 style="text-align: start">Price : <strong>{{$service->price}}</strong></h4>
-                        <a href="#" class=" btn_primary">👋 Hire Me</a>
+                        <a href="{{route('order')}}?id={{Crypt::encrypt($service->id)}}" class=" btn_primary">👋 Hire Me</a>
                     </div>
                 </div>
             </div>   
@@ -213,26 +213,26 @@
     </div>
 </section>
 
-<div id="colorlib-counter" class="colorlib-counters" style="background-image: url({{asset('assets/images/cover_bg_1.jpg')}});" data-stellar-background-ratio="0.5">
+<div id="colorlib-counter" class="colorlib-counters" style="background-image: url({{ 'storage/'.$workflow->banner }});" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="colorlib-narrow-content">
         <div class="row">
         </div>
         <div class="row">
             <div class="col-md-3 text-center animate-box">
-                <span class="colorlib-counter js-counter" data-from="0" data-to="309" data-speed="5000" data-refresh-interval="50"></span>
+                <span class="colorlib-counter js-counter" data-from="0" data-to="{{ $workflow->got_tips }}" data-speed="5000" data-refresh-interval="50"></span>
                 <span class="colorlib-counter-label">Got Tips</span>
             </div>
             <div class="col-md-3 text-center animate-box">
-                <span class="colorlib-counter js-counter" data-from="0" data-to="356" data-speed="5000" data-refresh-interval="50"></span>
+                <span class="colorlib-counter js-counter" data-from="0" data-to="{{ $workflow->projects }}" data-speed="5000" data-refresh-interval="50"></span>
                 <span class="colorlib-counter-label">Projects</span>
             </div>
             <div class="col-md-3 text-center animate-box">
-                <span class="colorlib-counter js-counter" data-from="0" data-to="30" data-speed="5000" data-refresh-interval="50"></span>
+                <span class="colorlib-counter js-counter" data-from="0" data-to="{{ $workflow->clients }}" data-speed="5000" data-refresh-interval="50"></span>
                 <span class="colorlib-counter-label">Clients</span>
             </div>
             <div class="col-md-3 text-center animate-box">
-                <span class="colorlib-counter js-counter" data-from="0" data-to="10" data-speed="5000" data-refresh-interval="50"></span>
+                <span class="colorlib-counter js-counter" data-from="0" data-to="{{ $workflow->partners }}" data-speed="5000" data-refresh-interval="50"></span>
                 <span class="colorlib-counter-label">Partners</span>
             </div>
         </div>
@@ -249,20 +249,26 @@
         </div>
         <div class="row">
             <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-                <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into
-                    the belt and made herself on the way.</p>
+                <p>{!! $specialty[0]?->content !!}</p>
             </div>
+            @foreach ($specialty->slice(1) as $sp )
+            @php
+                $skill = json_decode($sp->content, true);
+               
+            @endphp
             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                 <div class="progress-wrap">
-                    <h3>Photoshop</h3>
+                    <h3>{{ $skill[0] }}</h3>
                     <div class="progress">
-                        <div class="progress-bar color-1" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
-                            <span>75%</span>
+                        <div class="progress-bar " role="progressbar" aria-valuenow="{{ $skill[1] }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ $skill[1] }}%;background-color: {{  $skill[2]  }}">
+                            <span>{{ $skill[1] }}%</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+            @endforeach
+
+            {{-- <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
                 <div class="progress-wrap">
                     <h3>jQuery</h3>
                     <div class="progress">
@@ -311,7 +317,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
+
+
         </div>
     </div>
 </section>
@@ -328,27 +336,27 @@
             <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
                 <div class="fancy-collapse-panel">
                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        @foreach ($faqs as $faq )
+                            
+                       
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Master Degree Graphic Design
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $faq->id }}" aria-expanded="true" aria-controls="collapse{{ $faq->id }}">{{ $faq->question }}
                                 </a>
                                 </h4>
                             </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div id="collapse{{ $faq->id }}" class="panel-collapse collapse " role="tabpanel" aria-labelledby="heading{{ $faq->id }}">
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                        </div>
+                                       {!! $faq->ans !!}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default">
+                        @endforeach
+
+                        {{-- <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingTwo">
                                 <h4 class="panel-title">
                                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Bachelor Degree of Computer Science
@@ -409,7 +417,9 @@
                                         a large language ocean.</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
+
+
                     </div>
                 </div>
             </div>
@@ -428,6 +438,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="timeline-centered">
+
+                    @foreach ($experiences as $experience )
+                        
+                    @endforeach
+
                     <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
                         <div class="timeline-entry-inner">
 
@@ -436,15 +451,14 @@
                             </div>
 
                             <div class="timeline-label">
-                                <h2><a href="#">Full Stack Developer</a> <span>2017-2018</span></h2>
-                                <p>Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial two promise. Greatly who affixed suppose but enquire compact prepare all put. Added forth chief trees
-                                    but rooms think may.</p>
+                                <h2><a href="#">{{$experience->title}}</a> <span>{{ $experience->sub_title_or_time }}</span></h2>
+                                <p>{!!  $experience->details !!}</p>
                             </div>
                         </div>
                     </article>
 
 
-                    <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
+                    {{-- <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
                         <div class="timeline-entry-inner">
                             <div class="timeline-icon color-2">
                                 <i class="fa fa-briefcase" style="color: white;"></i>
@@ -501,7 +515,7 @@
                             <div class="timeline-icon color-none">
                             </div>
                         </div>
-                    </article>
+                    </article> --}}
                 </div>
             </div>
         </div>
@@ -518,17 +532,22 @@
         </div>
       
         <div class="row">
+            @foreach ($portfolios as $portfolio)
+                
+            @endforeach
             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                <div class="project" style="background-image: url({{asset('assets/images/img-1.jpg')}});">
+                <div class="project" style="background-image: url({{asset("Storage/$portfolio->image")}});">
                     <div class="desc">
                         <div class="con">
-                            <h3><a href="work.html">My Portfolio Work</a></h3>
-                           <p style="color: white;text-align:justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam eligendi numquam nostrum, asperiores deleniti possimus quam aliquam aspernatur recusandae quas expedita consequuntur at deserunt magnam totam, similique iste repellat blanditiis.</p>
+                            <h3><a href="work.html">{{ $portfolio->title }}</a></h3>
+                           <p style="color: white;text-align:justify">{{ $portfolio->description }}</p>
                            
                         </div>
                     </div>
                 </div>
             </div>
+
+{{-- 
             <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
                 <div class="project" style="background-image: url({{asset('assets/images/img-2.jpg')}});">
                     <div class="desc">
@@ -588,7 +607,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
+
         </div>
         <div class="row">
             <div class="col-md-12 animate-box">
@@ -607,16 +627,40 @@
             </div>
         </div>
         <div class="row">
+            @php
+            use Illuminate\Support\Str;
+            @endphp
+            @foreach (  $blogs as $blog )
+                
+           
             <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
                 <div class="blog-entry">
-                    <a href="blog.html" class="blog-img"><img src="{{asset('assets/images/blog-1.jpg')}}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+                    <a href="blog.html" class="blog-img">
+                        @if($blog->type==0)
+                        <iframe width="250" height="115" 
+                        src="{{ $blog->video }}" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                        @else
+                        <img src="{{asset("Storage/$blog->image")}}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com">
+                        @endif
+                    </a>
                     <div class="desc">
-                        <span><small>April 14, 2018 </small> | <small> Web Design </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-                        <h3><a href="blog.html">Renovating National Gallery</a></h3>
-                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                        <span><small>
+                            {{ \Carbon\Carbon::parse($blog->created_at)->format('j F Y - h.ia') }}
+                        </small>
+                            <small></span>
+                        <h3><a href="blog.html">{{$blog->title}}</a></h3>
+                     
+                        <p>{!! Str::words($blog->blog, 30, '...') !!}</p>
                     </div>
                 </div>
             </div>
+            @endforeach
+{{-- 
             <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
                 <div class="blog-entry">
                     <a href="blog.html" class="blog-img"><img src="{{asset('assets/images/blog-2.jpg')}}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
@@ -636,7 +680,8 @@
                         <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
                     </div>
                 </div>
-            </div>
+            </div> --}}
+
         </div>
         <div class="row">
             <div class="col-md-12 animate-box">
@@ -661,7 +706,7 @@
                         <i class="fa fa-paper-plane"></i>
                     </div>
                     <div class="colorlib-text">
-                        <p><a href="#"><span class="__cf_email__" data-cfemail="2f464149406f4b40424e4641014c4042">FreelancerTasfia@gmail.com</span></a></p>
+                        <p><a href="#"><span class="__cf_email__" data-cfemail="2f464149406f4b40424e4641014c4042">{{$social_link?->email}}</span></a></p>
                     </div>
                 </div>
 
@@ -670,7 +715,7 @@
                         <i class="fa fa-location-dot"></i>
                     </div>
                     <div class="colorlib-text">
-                        <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+                        <p>{{$social_link?->address}}</p>
                     </div>
                 </div>
 
@@ -679,32 +724,41 @@
                         <i class="fa fa-phone"></i>
                     </div>
                     <div class="colorlib-text">
-                        <p><a href="tel://">+123 456 7890</a></p>
+                        <p><a href="tel://">{{$social_link?->phone}}</a></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-7 col-md-push-1">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
-                        <form action="">
+                        
+                        <form action="{{ route('msgs.store') }}" method="POST">
+                            @csrf
+                        
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Name">
+                                <input type="text" name="name" class="form-control" placeholder="Name" required>
                             </div>
+                        
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Email">
+                                <input type="email" name="email" class="form-control" placeholder="Email" required>
                             </div>
+                        
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Subject">
+                                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
                             </div>
+                        
                             <div class="form-group">
-                                <textarea name="" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                                <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
                             </div>
+                        
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary btn-send-message" value="Send Message">
                             </div>
                         </form>
+
                     </div>
 
+                    
                 </div>
             </div>
         </div>

@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\SiteInfoController;
 use App\Http\Controllers\Admin\ThemeColorController;
 use App\Http\Controllers\Admin\PaymentMethodController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\MsgController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -29,6 +30,8 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/portfolio', 'portfolio')->name('portfolio');
    
 });
+Route::post('msgs', [MsgController::class, 'store'])->name('msgs.store');
+
 
 
 Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(function () {
@@ -43,14 +46,14 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
     Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
     Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class);
     Route::resource('social-links', \App\Http\Controllers\Admin\SocialLinkController::class);
-    Route::resource('msgs', \App\Http\Controllers\Admin\MsgController::class);
+    Route::resource('msgs', MsgController::class)->except(['store']);
     Route::resource('siteinfo', SiteInfoController::class);
     Route::resource('theme-colors', ThemeColorController::class);
     Route::resource('payment-methods', PaymentMethodController::class);
 
-    Route::resource('messages', MessageController::class)->only([
-        'index', 'store', 'update', 'destroy'
-    ]);;
+    // Route::resource('messages', MessageController::class)->only([
+    //     'index', 'store', 'update', 'destroy'
+    // ]);;
 
     Route::controller(AdminController::class)->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');

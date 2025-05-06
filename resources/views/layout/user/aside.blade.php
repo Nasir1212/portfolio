@@ -1,8 +1,8 @@
 <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
     <div class="text-center">
-        <div class="author-img" style="background-image: url({{asset('assets/images/about.jpg')}});"></div>
-        <h1 id="colorlib-logo"><a href="index.html">Freelancer Tasfia</a></h1>
-        <span class="position"><a href="#">Digital Marketer </a> in World Wide</span>
+        <div class="author-img" style="background-image: url({{asset("Storage/$site_info->profile_img")}});"></div>
+        <h1 id="colorlib-logo"><a href="#">{{ $site_info->name }}</a></h1>
+        <span class="position"><a href="#"> {{ $site_info->slug }} </a> </span>
     </div>
     @if (Request::is('/')) 
    
