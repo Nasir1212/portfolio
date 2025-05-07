@@ -109,10 +109,10 @@
         <div class="invoice-header">
             <div class="logo">Invoice</div>
             <div class="company-details">
-                <p><strong>Company Name</strong></p>
-                <p>123 Business St, Business City</p>
-                <p>Email: support@company.com</p>
-                <p>Phone: +123 456 7890</p>
+                <p><strong>{{ $site_info->name }}</strong></p>
+                <p>{{ $site_info->address }}</p>
+                <p>Email: {{ $social_link->email }}</p>
+                <p>Phone: {{ $social_link->phone }}</p>
             </div>
         </div>
 
@@ -125,7 +125,7 @@
             </div>
             <div class="order-info">
                 <h4>Order Info</h4>
-                <p><strong>Order ID:</strong> #{{ $order->id }}</p>
+                <p><strong>Order ID:</strong> #{{ $order->order_id}}</p>
                 <p><strong>Service:</strong> {{ $order->service }}</p>
                 <p><strong>Date:</strong> {{ $order->created_at->format('F j, Y') }}</p>
             </div>
@@ -151,7 +151,7 @@
         </div>
 
         <div class="footer">
-            <p>Thank you for your business! If you have any questions, feel free to contact us.</p>
+            <p>Thank you for your buying! If you have any questions, feel free to contact us.</p>
         </div>
     </div>
 

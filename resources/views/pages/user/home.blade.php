@@ -43,32 +43,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="row">
-                    <div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-                        <div class="services color-1">
-                            <span class="icon2"><i class="icon-bulb"></i></span>
-                            <h3>Graphic Design</h3>
-                        </div>
-                    </div>
-                    <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
-                        <div class="services color-2">
-                            <span class="icon2"><i class="icon-globe-outline"></i></span>
-                            <h3>Web Design</h3>
-                        </div>
-                    </div>
-                    <div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
-                        <div class="services color-3">
-                            <span class="icon2"><i class="icon-data"></i></span>
-                            <h3>Software</h3>
-                        </div>
-                    </div>
-                    <div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-                        <div class="services color-4">
-                            <span class="icon2"><i class="icon-phone3"></i></span>
-                            <h3>Application</h3>
-                        </div>
-                    </div>
-                </div> --}}
+               
                 <div class="row">
                     <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
                         <div class="hire">
@@ -115,97 +90,8 @@
                     </div>
                 </div>
             </div>   
-@endforeach
-            
-            {{-- <div class="col-md-4 text-center animate-box">
-                <div class="services color-1">
-                    <div>
-                        <h6 style="margin-bottom:5px;text-align:start">My Service</h6>
-                    </div>
-               
-                    <div class="desc">
-                        <h3>Server Side Tracking</h3>
-                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-                    </div>
-                    <div>
-                        <h4 style="text-align: start">Price : <strong>435$</strong></h4>
-                        <a href="#" class=" btn_primary">👋 Hire Me</a>
-                    </div>
-                </div>
-            </div>   
-
-
-
-            <div class="col-md-4 text-center animate-box">
-                <div class="services color-1">
-                    <div>
-                        <h6 style="margin-bottom:5px;text-align:start">My Service</h6>
-                    </div>
-               
-                    <div class="desc">
-                        <h3>Pixel Setup</h3>
-                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-                    </div>
-                    <div>
-                        <h4 style="text-align: start">Price : <strong>100$</strong></h4>
-                        <a href="#" class=" btn_primary">👋 Hire Me</a>
-                    </div>
-                </div>
-            </div>   
-
-
-
-            <div class="col-md-4 text-center animate-box">
-                <div class="services color-1">
-                    <div>
-                        <h6 style="margin-bottom:5px;text-align:start">My Service</h6>
-                    </div>
-               
-                    <div class="desc">
-                        <h3>Facebook Page Monthly Package</h3>
-                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-                    </div>
-                    <div>
-                        <h4 style="text-align: start">Price : <strong>9600$</strong></h4>
-                        <a href="#" class=" btn_primary">👋 Hire Me</a>
-                    </div>
-                </div>
-            </div>   
-
-
-
-            <div class="col-md-4 text-center animate-box">
-                <div class="services color-1">
-                    <div>
-                        <h6 style="margin-bottom:5px;text-align:start">My Service</h6>
-                    </div>
-               
-                    <div class="desc">
-                        <h3>Conversion API</h3>
-                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-                    </div>
-                    <div>
-                        <h4 style="text-align: start">Price : <strong>5600$</strong></h4>
-                        <a href="#" class=" btn_primary">👋 Hire Me</a>
-                    </div>
-                </div>
-            </div>   
-            <div class="col-md-4 text-center animate-box">
-                <div class="services color-1">
-                    <div>
-                        <h6 style="margin-bottom:5px;text-align:start">My Service</h6>
-                    </div>
-               
-                    <div class="desc">
-                        <h3>Facebook Ads Campaign </h3>
-                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
-                    </div>
-                    <div>
-                        <h4 style="text-align: start">Price : <strong>5600$</strong></h4>
-                        <a href="#" class=" btn_primary">👋 Hire Me</a>
-                    </div>
-                </div>
-            </div>    --}}
+        @endforeach
+         
 
 
         </div>
@@ -267,59 +153,6 @@
                 </div>
             </div>
             @endforeach
-
-            {{-- <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-                <div class="progress-wrap">
-                    <h3>jQuery</h3>
-                    <div class="progress">
-                        <div class="progress-bar color-2" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-                            <span>60%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                <div class="progress-wrap">
-                    <h3>HTML5</h3>
-                    <div class="progress">
-                        <div class="progress-bar color-3" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
-                            <span>85%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-                <div class="progress-wrap">
-                    <h3>CSS3</h3>
-                    <div class="progress">
-                        <div class="progress-bar color-4" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
-                            <span>90%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                <div class="progress-wrap">
-                    <h3>WordPress</h3>
-                    <div class="progress">
-                        <div class="progress-bar color-5" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                            <span>70%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-                <div class="progress-wrap">
-                    <h3>SEO</h3>
-                    <div class="progress">
-                        <div class="progress-bar color-6" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                            <span>80%</span>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-
-
         </div>
     </div>
 </section>
@@ -356,69 +189,7 @@
                         </div>
                         @endforeach
 
-                        {{-- <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingTwo">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Bachelor Degree of Computer Science
-                                </a>
-                                </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="panel-body">
-                                    <p>Far far away, behind the word <strong>mountains</strong>, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
-                                        a large language ocean.</p>
-                                    <ul>
-                                        <li>Separated they live in Bookmarksgrove right</li>
-                                        <li>Separated they live in Bookmarksgrove right</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingThree">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Diploma in Information Technology
-                                </a>
-                                </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="panel-body">
-                                    <p>Far far away, behind the word <strong>mountains</strong>, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
-                                        a large language ocean.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFour">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Diploma in Information Technology
-                                </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                                <div class="panel-body">
-                                    <p>Far far away, behind the word <strong>mountains</strong>, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
-                                        a large language ocean.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFive">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">High School Secondary Education
-                                </a>
-                                </h4>
-                            </div>
-                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                                <div class="panel-body">
-                                    <p>Far far away, behind the word <strong>mountains</strong>, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
-                                        a large language ocean.</p>
-                                </div>
-                            </div>
-                        </div> --}}
-
+                     
 
                     </div>
                 </div>
@@ -458,64 +229,7 @@
                     </article>
 
 
-                    {{-- <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-                        <div class="timeline-entry-inner">
-                            <div class="timeline-icon color-2">
-                                <i class="fa fa-briefcase" style="color: white;"></i>
-                            </div>
-                            <div class="timeline-label">
-                                <h2><a href="#">Front End Developer at Google Company</a> <span>2017-2018</span></h2>
-                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far
-                                    World of Grammar.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-                        <div class="timeline-entry-inner">
-                            <div class="timeline-icon color-3">
-                                <i class="fa fa-briefcase" style="color: white;"></i>
-                            </div>
-                            <div class="timeline-label">
-                                <h2><a href="#">System Analyst</a> <span>2017-2018</span></h2>
-                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far
-                                    World of Grammar.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
-                        <div class="timeline-entry-inner">
-                            <div class="timeline-icon color-4">
-                                <i class="fa fa-briefcase" style="color: white;"></i>
-                            </div>
-                            <div class="timeline-label">
-                                <h2><a href="#">Creative Designer</a> <span>2017-2018</span></h2>
-                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far
-                                    World of Grammar.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-                        <div class="timeline-entry-inner">
-                            <div class="timeline-icon color-5">
-                                <i class="fa fa-briefcase" style="color: white;"></i>
-                            </div>
-                            <div class="timeline-label">
-                                <h2><a href="#">UI/UX Designer at Envato</a> <span>2017-2018</span></h2>
-                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far
-                                    World of Grammar.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-                        <div class="timeline-entry-inner">
-                            <div class="timeline-icon color-none">
-                            </div>
-                        </div>
-                    </article> --}}
+                    
                 </div>
             </div>
         </div>
@@ -534,7 +248,7 @@
         <div class="row">
             @foreach ($portfolios as $portfolio)
                 
-            @endforeach
+         
             <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                 <div class="project" style="background-image: url({{asset("Storage/$portfolio->image")}});">
                     <div class="desc">
@@ -547,67 +261,7 @@
                 </div>
             </div>
 
-{{-- 
-            <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-                <div class="project" style="background-image: url({{asset('assets/images/img-2.jpg')}});">
-                    <div class="desc">
-                        <div class="con">
-                            <h3><a href="work.html">Work 02</a></h3>
-                            <h3><a href="work.html">My Portfolio Work</a></h3>
-                            <p style="color: white;text-align:justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam eligendi numquam nostrum, asperiores deleniti possimus quam aliquam aspernatur recusandae quas expedita consequuntur at deserunt magnam totam, similique iste repellat blanditiis.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
-                <div class="project" style="background-image: url({{asset('assets/images/img-3.jpg')}});">
-                    <div class="desc">
-                        <div class="con">
-                            <h3><a href="work.html">Work 03</a></h3>
-                            <h3><a href="work.html">My Portfolio Work</a></h3>
-                            <p style="color: white;text-align:justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam eligendi numquam nostrum, asperiores deleniti possimus quam aliquam aspernatur recusandae quas expedita consequuntur at deserunt magnam totam, similique iste repellat blanditiis.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-                <div class="project" style="background-image: url({{asset('assets/images/img-4.jpg')}});">
-                    <div class="desc">
-                        <div class="con">
-                            <h3><a href="work.html">Work 04</a></h3>
-                            <h3><a href="work.html">My Portfolio Work</a></h3>
-                            <p style="color: white;text-align:justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam eligendi numquam nostrum, asperiores deleniti possimus quam aliquam aspernatur recusandae quas expedita consequuntur at deserunt magnam totam, similique iste repellat blanditiis.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                <div class="project" style="background-image: url({{asset('assets/images/img-5.jpg')}});">
-                    <div class="desc">
-                        <div class="con">
-                            <h3><a href="work.html">Work 05</a></h3>
-                            <h3><a href="work.html">My Portfolio Work</a></h3>
-                            <p style="color: white;text-align:justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam eligendi numquam nostrum, asperiores deleniti possimus quam aliquam aspernatur recusandae quas expedita consequuntur at deserunt magnam totam, similique iste repellat blanditiis.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-                <div class="project" style="background-image: url({{asset('assets/images/img-6.jpg')}});">
-                    <div class="desc">
-                        <div class="con">
-                            <h3><a href="work.html">Work 06</a></h3>
-                            <h3><a href="work.html">My Portfolio Work</a></h3>
-                            <p style="color: white;text-align:justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam eligendi numquam nostrum, asperiores deleniti possimus quam aliquam aspernatur recusandae quas expedita consequuntur at deserunt magnam totam, similique iste repellat blanditiis.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
+            @endforeach
 
         </div>
         <div class="row">
@@ -653,34 +307,16 @@
                             {{ \Carbon\Carbon::parse($blog->created_at)->format('j F Y - h.ia') }}
                         </small>
                             <small></span>
-                        <h3><a href="blog.html">{{$blog->title}}</a></h3>
+
+
+
+                        <h3><a href=" {{  route('blog',['title'=>$blog->title,'id'=>urlencode(Crypt::encrypt($blog->id))]) }}  ">{{$blog->title}}</a></h3>
                      
                         <p>{!! Str::words($blog->blog, 30, '...') !!}</p>
                     </div>
                 </div>
             </div>
             @endforeach
-{{-- 
-            <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-                <div class="blog-entry">
-                    <a href="blog.html" class="blog-img"><img src="{{asset('assets/images/blog-2.jpg')}}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-                    <div class="desc">
-                        <span><small>April 14, 2018 </small> | <small> Web Design </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-                        <h3><a href="blog.html">Wordpress for a Beginner</a></h3>
-                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-                <div class="blog-entry">
-                    <a href="blog.html" class="blog-img"><img src="{{asset('assets/images/blog-3.jpg')}}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
-                    <div class="desc">
-                        <span><small>April 14, 2018 </small> | <small> Inspiration </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-                        <h3><a href="blog.html">Make website from scratch</a></h3>
-                        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                    </div>
-                </div>
-            </div> --}}
 
         </div>
         <div class="row">

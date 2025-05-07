@@ -1,5 +1,10 @@
 @extends('layout.user.layout')
 @section('content')
+@php
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Crypt;
+
+@endphp
 <style>
  .card-img-top {
     width: 100%;
@@ -27,118 +32,36 @@
 </style>
 <div class="container" style="max-width: 950px;width:100%;margin:0 auto;padding-left: 29px;">  
     <div class="row  ">
-<h2 class="text-center mb-4">Latest Blogs</h2>
+<h2 class="text-center mb-4">All Blogs</h2>
 <div class="row">
-    <div class="col-md-4">
+
+    @foreach ($all_blogs as $blog)
+        
+        <div class="col-md-4">
         <div class="card shadow-sm">
-            <img src="{{asset('assets/images/img-1.jpg')}}" class="card-img-top" alt="Blog Image">
+            @if($blog->type==0)
+                        <iframe width="250" height="115" 
+                        src="{{ $blog->video }}" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                        @else
+                        <img src="{{asset("Storage/$blog->image")}}" class="card-img-top" alt="HTML5 Bootstrap Template by colorlib.com">
+                        @endif
+          
             <div class="card-body">
-                <h5 class="card-title">Blog Title 1</h5>
-                <p class="card-text">A short description of the blog post goes here...</p>
-                <a href="{{ route('blog') }}" class="btn btn-primary">Read More</a>
+                <h5 class="card-title">{{ $blog->title }}</h5>
+                <p class="card-text">{!! Str::words($blog->blog, 30, '...') !!}</p>
+                <a href=" {{  route('blog',['title'=>$blog->title,'id'=>urlencode(Crypt::encrypt($blog->id))]) }}" class="btn btn-primary">Read More</a>
             </div>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="card shadow-sm">
-            <img src="{{ asset('assets/images/img-2.jpg')}}" class="card-img-top" alt="Blog Image">
-            <div class="card-body">
-                <h5 class="card-title">350-year-old fair cancelled due to BNP factional dispute</h5>
-                <p class="card-text">A short description of the blog post goes here...</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card shadow-sm">
-            <img src="{{asset('assets/images/img-3.jpg')}}" class="card-img-top" alt="Blog Image">
-            <div class="card-body">
-                <h5 class="card-title">Two 'student coordinators' accused of extortion in police custody in Ctg</h5>
-                <p class="card-text">A short description of the blog post goes here...</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card shadow-sm">
-            <img src="{{asset('assets/images/img-2.jpg')}}" class="card-img-top" alt="Blog Image">
-            <div class="card-body">
-                <h5 class="card-title">350-year-old fair cancelled due to BNP factional dispute</h5>
-                <p class="card-text">A short description of the blog post goes here...</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card shadow-sm">
-            <img src="{{asset('assets/images/img-3.jpg')}}" class="card-img-top" alt="Blog Image">
-            <div class="card-body">
-                <h5 class="card-title">Two 'student coordinators' accused of extortion in police custody in Ctg</h5>
-                <p class="card-text">A short description of the blog post goes here...</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card shadow-sm">
-            <img src="{{asset('assets/images/img-2.jpg')}}" class="card-img-top" alt="Blog Image">
-            <div class="card-body">
-                <h5 class="card-title">350-year-old fair cancelled due to BNP factional dispute</h5>
-                <p class="card-text">A short description of the blog post goes here...</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card shadow-sm">
-            <img src="{{asset('assets/images/img-3.jpg')}}" class="card-img-top" alt="Blog Image">
-            <div class="card-body">
-                <h5 class="card-title">Two 'student coordinators' accused of extortion in police custody in Ctg</h5>
-                <p class="card-text">A short description of the blog post goes here...</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card shadow-sm">
-            <img src="{{asset('assets/images/img-2.jpg')}}" class="card-img-top" alt="Blog Image">
-            <div class="card-body">
-                <h5 class="card-title">350-year-old fair cancelled due to BNP factional dispute</h5>
-                <p class="card-text">A short description of the blog post goes here...</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card shadow-sm">
-            <img src="{{asset('assets/images/img-3.jpg')}}" class="card-img-top" alt="Blog Image">
-            <div class="card-body">
-                <h5 class="card-title">Two 'student coordinators' accused of extortion in police custody in Ctg</h5>
-                <p class="card-text">A short description of the blog post goes here...</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card shadow-sm">
-            <img src="{{asset('assets/images/img-2.jpg')}}" class="card-img-top" alt="Blog Image">
-            <div class="card-body">
-                <h5 class="card-title">350-year-old fair cancelled due to BNP factional dispute</h5>
-                <p class="card-text">A short description of the blog post goes here...</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card shadow-sm">
-            <img src="{{asset('assets/images/img-3.jpg')}}" class="card-img-top" alt="Blog Image">
-            <div class="card-body">
-                <h5 class="card-title">Two 'student coordinators' accused of extortion in police custody in Ctg</h5>
-                <p class="card-text">A short description of the blog post goes here...</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div>
-        </div>
-    </div>
+
+    @endforeach
+
+
 </div>
 
     </div>

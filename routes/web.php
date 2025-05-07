@@ -17,20 +17,19 @@ use App\Http\Controllers\Admin\ThemeColorController;
 use App\Http\Controllers\Admin\PaymentMethodController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\MsgController;
+use App\Http\Controllers\Admin\OrderController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'home')->name('home');
     Route::get('/order', 'order')->name('order');
     Route::get('/blogs', 'blogs')->name('blogs');
-    Route::get('/blog', 'blog')->name('blog');
+    Route::get('/blog/{title}/{id}', 'blog')->name('blog');
     Route::get('/portfolio', 'portfolio')->name('portfolio');
    
 });
 Route::post('msgs', [MsgController::class, 'store'])->name('msgs.store');
+Route::post('order-store', [OrderController::class, 'store'])->name('order.store');
 
 
 
@@ -44,7 +43,7 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
     Route::resource('blogs', BlogController::class);
     Route::resource('portfolios', PortfolioController::class);
     Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
-    Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class);
+    Route::resource('orders', OrderController::class)->except(['store']);;
     Route::resource('social-links', \App\Http\Controllers\Admin\SocialLinkController::class);
     Route::resource('msgs', MsgController::class)->except(['store']);
     Route::resource('siteinfo', SiteInfoController::class);

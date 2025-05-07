@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use App\Models\Slider;
 use App\Models\About;
+use App\Models\Blog;
+use Illuminate\Support\Facades\Crypt;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,8 +21,10 @@ class HomeController extends Controller
     public function blogs(){
         return view('pages.user.blogs');
     }
-    public function blog(){
-        return view('pages.user.blog');
+    public function blog($title,$id){    
+           
+        $blog = Blog::findOrFail(Crypt::decrypt(urldecode($id)));
+        return view('pages.user.blog',compact('blog'));
     }
     public function portfolio(){
         return view('pages.user.portfolio');

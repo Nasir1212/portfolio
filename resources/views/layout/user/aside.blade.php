@@ -21,12 +21,13 @@
   </p>
 
         <ul>
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+            <li><a href="{{ $social_link->facebook }}"  target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://wa.me/{{ $social_link->whatsapp }}" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
 
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="{{ $social_link->twitter }}"  target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="{{ $social_link->instagram }}"  target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="{{ $social_link->linkedin }}"  target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="{{ $social_link->youtube }}"  target="_blank"><i class="fab fa-youtube"></i></a></li>
         </ul>
     </div>
 

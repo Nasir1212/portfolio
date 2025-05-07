@@ -35,13 +35,15 @@
                 <h2 class="text-center mb-4">Place Your Order</h2>
                 <br>
                 <p>Your satisfaction is our priority. We are committed to delivering top-quality services, ensuring every project meets the highest standards. Place your order with confidence, knowing you're in expert hands</p>
-                <form action="submit_order.php" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('order.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="row">
                         
                       <div class="col-sm-12 col-md-6 col-lg-6">
                     <div class="mb-3">
-                        <label for="phone" class="form-label">Your name</label>
-                        <input type="tel" id="phone" placeholder="Enter your name" name="name" class="form-control" required>
+                        <label for="name" class="form-label">Your name</label>
+                        <input type="text" id="name" placeholder="Enter your name" name="name" class="form-control" required>
+                        <input type="hidden" value="@if( request('id')){{ request('id')}}@endif"  name="product_id" >
                     </div>
                       </div>
                       <div class="col-sm-12 col-md-6 col-lg-6">
@@ -74,9 +76,24 @@
                         <input type="file" id="file" name="essential_file" class="form-control" required>
                     </div>
                     </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                    <div class="mb-3">
+                        <label for="payment_type" class="form-label">Payment Type</label>
+                        <select name="payment_type" id="" class="form-control">
+                            <option value="0">Cash/Offline</option>
+                            <option value="1">Online</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <textarea name="address" id="address" rows="3" placeholder="Enter project details" class="form-control" required></textarea>
+                    </div>
+                    </div>
                     <div class="col-sm-12 col-md-12 col-lg-12">
                     <div class="mb-3">
-                        <label for="file" class="form-label">Project Details</label>
+                        <label for="file" class="form-label">Project/ Product Details </label>
                         <textarea name="details" id="details" rows="10" placeholder="Enter project details" class="form-control" required></textarea>
                     </div>
                     </div>

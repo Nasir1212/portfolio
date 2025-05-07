@@ -43,6 +43,7 @@ class AppServiceProvider extends ServiceProvider
                 'services' => Service::all(),
                 'portfolios' => Portfolio::latest('id')->take(4)->get(),
                 'blogs' => Blog::latest('id')->take(4)->get(),
+                'all_blogs' => Blog::latest('id')->get(),
                 'site_info' => SiteInfo::latest('id')->first(),
                 'social_link' => SocialLink::latest('id')->first()
             ]);
