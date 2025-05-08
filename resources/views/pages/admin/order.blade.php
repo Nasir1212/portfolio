@@ -77,7 +77,7 @@
 
       {{-- Add Modal --}}
       <div class="modal fade" id="order_add_modal_1" tabindex="-1" role="dialog" aria-labelledby="order_add_modal_1" aria-hidden="true">
-        <form action="{{ route('admin.orders.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('order.store') }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">

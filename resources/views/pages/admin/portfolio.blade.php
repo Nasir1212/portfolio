@@ -29,6 +29,7 @@
                   <tr>
                     <th>Image</th>
                     <th>Title</th>
+                    <th>target link</th>
                     <th>Description</th>
                     <th>Action</th>
                   </tr>
@@ -40,6 +41,7 @@
                         <img style="width: 150px; height: 100px;" src="{{ asset('storage/'.$portfolio->image) }}" alt="">
                     </td>
                     <td>{{ $portfolio->title }}</td>
+                    <td>{{ $portfolio->target_link }}</td>
                     <td>{{ $portfolio->description }}</td>
                     <td style="max-width:14rem;" class="d-flex justify-content-between float-end w-100">
                       <button class="btn btn-icon btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#portfolio_edit_modal_{{ $portfolio->id }}">
@@ -86,6 +88,10 @@
                   <div class="form-group">
                     <label for="title" class="col-form-label">Title</label>
                     <input type="text" class="form-control" name="title" placeholder="Enter Title" value="{{ old('title') }}" required/>
+                  </div>
+                  <div class="form-group">
+                    <label for="target_link" class="col-form-label">target link</label>
+                    <input type="text" class="form-control" name="target_link" placeholder="Enter target link" value="{{ old('target_link') }}" required/>
                   </div>
 
                   <div class="form-group">
@@ -134,6 +140,10 @@
                   <div class="form-group">
                     <label for="title" class="col-form-label">Title</label>
                     <input type="text" class="form-control" name="title" value="{{ old('title', $portfolio->title) }}" required/>
+                  </div>
+                  <div class="form-group">
+                    <label for="target_link" class="col-form-label">target link</label>
+                    <input type="text" class="form-control" name="target_link" value="{{ old('target_link', $portfolio->target_link) }}" required/>
                   </div>
 
                   <div class="form-group">

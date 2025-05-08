@@ -48,7 +48,7 @@ use Illuminate\Support\Facades\Crypt;
                         allowfullscreen>
                     </iframe>
                         @else
-                        <img src="{{asset("Storage/$blog->image")}}" class="card-img-top" alt="HTML5 Bootstrap Template by colorlib.com">
+                        <img src="{{asset("$blog->image")}}" class="card-img-top" alt="HTML5 Bootstrap Template by colorlib.com">
                         @endif
           
             <div class="card-body">

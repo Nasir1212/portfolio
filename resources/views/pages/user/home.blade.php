@@ -212,7 +212,7 @@
 
                     @foreach ($experiences as $experience )
                         
-                    @endforeach
+                   
 
                     <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
                         <div class="timeline-entry-inner">
@@ -228,7 +228,7 @@
                         </div>
                     </article>
 
-
+                    @endforeach
                     
                 </div>
             </div>
@@ -253,7 +253,7 @@
                 <div class="project" style="background-image: url({{asset("Storage/$portfolio->image")}});">
                     <div class="desc">
                         <div class="con">
-                            <h3><a href="work.html">{{ $portfolio->title }}</a></h3>
+                            <h3><a href="{{$portfolio->target_link}}" target="_blank">{{ $portfolio->title }}</a></h3>
                            <p style="color: white;text-align:justify">{{ $portfolio->description }}</p>
                            
                         </div>

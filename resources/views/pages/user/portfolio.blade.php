@@ -35,12 +35,14 @@
         <br>
     <h1>My Portfolio</h1>
     <div class="portfolio-container">
+        @foreach ($all_portfolios as $portfolio)   
         <div class="portfolio-item">
-            <img src="{{asset('assets/images/img-3.jpg')}}" alt="Work Image">
-            <h3>Project Title 1</h3>
-            <p>Description of the project goes here. Brief details about the work.</p>
+            <img src="{{asset('storage/'.$portfolio->image)}}" alt="Work Image">
+            <a href="{{$portfolio->target_link}}" target="_blank"> <h3>{{$portfolio->title}}</h3> </a>
+            <p>{{$portfolio->description}}</p>
         </div>
-        <div class="portfolio-item">
+        @endforeach
+        {{-- <div class="portfolio-item">
             <img src="{{asset('assets/images/img-2.jpg')}}" alt="Work Image">
             <h3>Project Title 2</h3>
             <p>Description of the project goes here. Brief details about the work.</p>
@@ -49,7 +51,8 @@
             <img src="{{asset('assets/images/img-6.jpg')}}" alt="Work Image">
             <h3>Project Title 3</h3>
             <p>Description of the project goes here. Brief details about the work.</p>
-        </div>
+        </div> --}}
+
     </div>
 
     </div>

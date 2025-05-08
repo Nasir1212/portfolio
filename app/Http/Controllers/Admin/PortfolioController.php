@@ -32,6 +32,7 @@ class PortfolioController extends Controller
     {
         $validated = $request->validate([
             'title' => 'nullable|string|max:255',
+            'target_link' => 'nullable|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'description' => 'nullable|string',
         ]);
@@ -72,6 +73,7 @@ class PortfolioController extends Controller
         
             $validated = $request->validate([
                 'title' => 'nullable|string|max:255',
+                'target_link' => 'nullable|string|max:255',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'description' => 'nullable|string',
             ]);

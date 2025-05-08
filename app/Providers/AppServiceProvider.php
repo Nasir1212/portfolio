@@ -42,6 +42,7 @@ class AppServiceProvider extends ServiceProvider
                 'experiences' => Experience::all(),
                 'services' => Service::all(),
                 'portfolios' => Portfolio::latest('id')->take(4)->get(),
+                'all_portfolios' => Portfolio::latest('id')->get(),
                 'blogs' => Blog::latest('id')->take(4)->get(),
                 'all_blogs' => Blog::latest('id')->get(),
                 'site_info' => SiteInfo::latest('id')->first(),
