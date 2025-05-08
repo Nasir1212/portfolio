@@ -61,13 +61,13 @@
                     <div class="col-sm-12 col-md-6 col-lg-6">
                     <div class="mb-3">
                         <label for="service" class="form-label">Service name</label>
-                        <input type="text" id="service" placeholder="Enter  service name" name="service" class="form-control" required>
+                        <input type="text" id="service" placeholder="Enter  service name" name="service" class="form-control"  @if(request('id')) value="{{ $service->title }}" readonly @endif required>
                     </div>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-6">
                     <div class="mb-3">
                         <label for="service" class="form-label">Service price</label>
-                        <input type="text" id="service" placeholder="Enter service price" name="price" class="form-control" required>
+                        <input type="text" id="service" placeholder="Enter service price" name="price" class="form-control"  @if(request('id')) value="{{ $service->price }}" readonly @endif required>
                     </div>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-6">

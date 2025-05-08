@@ -35,6 +35,7 @@ class ServiceController extends Controller
             'price' => 'nullable|string|max:255',
             'toast' => 'nullable|string|max:255',
             'image' => 'nullable|image|max:2048',
+            'details' => 'nullable|string',
         ]);
 
         if ($request->hasFile('image')) {
@@ -72,6 +73,7 @@ class ServiceController extends Controller
             'title' => 'nullable|string|max:255',
             'price' => 'nullable|string|max:255',
             'toast' => 'nullable|string|max:255',
+            'details' => 'nullable|string',
             'image' => 'nullable|image|max:2048',
         ]);
 

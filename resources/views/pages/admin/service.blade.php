@@ -54,6 +54,9 @@
                                 <input type="text" class="form-control my-2" name="title" value="{{ old('title', $service->title) }}" placeholder="Title">
                                 <input type="text" class="form-control my-2" name="price" value="{{ old('price', $service->price) }}" placeholder="Price">
                                 <input type="text" class="form-control my-2" name="toast" value="{{ old('toast', $service->toast) }}" placeholder="Toast">
+                               
+                                <x-rich-text-editor name="details" placeholder="Enter Here" id-name="details-update-{{ $service->id }}" value="{{ old('details',$service->details) }}" />
+
                                 <input type="file" class="form-control my-2" name="image">
                                 @if($service->image)
                                     <img src="{{ asset('storage/'.$service->image) }}" width="100" alt="">
@@ -72,7 +75,7 @@
     </table>
 </div>
     <!-- Add Modal -->
-    <div class="modal fade" id="addServiceModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade modal-xl" id="addServiceModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <form action="{{ route('admin.services.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -85,6 +88,12 @@
                         <input type="text" class="form-control my-2" name="title" placeholder="Title">
                         <input type="text" class="form-control my-2" name="price" placeholder="Price">
                         <input type="text" class="form-control my-2" name="toast" placeholder="Toast">
+                        <div class="mb-3">
+                            <label for="details-update-{{ $service->id }}" class="form-label">Details</label>
+                            
+                            <x-rich-text-editor name="details" id-name="details-add" value="{{ old('details') }}" />
+                        </div>
+
                         <input type="file" class="form-control my-2" name="image">
                     </div>
                     <div class="modal-footer">

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->String('price')->nullable();
             $table->String('toast')->nullable();
             $table->String('image')->nullable();
+            $table->text('details')->nullable();
             $table->timestamps();
         });
     }

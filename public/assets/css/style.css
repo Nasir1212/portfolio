@@ -352,7 +352,7 @@ figure figcaption {
     display: table-cell;
     vertical-align: middle;
     min-height: 700px;
-    padding: 2.5em;
+    /* padding: 2.5em; */
     position: relative;
 }
 
