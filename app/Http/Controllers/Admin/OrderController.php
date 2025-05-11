@@ -51,7 +51,7 @@ class OrderController extends Controller
         'email' => 'nullable|email|max:255',
         'service' => 'required|string|max:255',
         'price' => 'required|string|max:255',
-        'essential_file' => 'nullable|file|max:2048',
+        'essential_file' => 'nullable|file',
         'details' => 'nullable|string',
         'address' => 'nullable|string',
         'payment_type' => 'required|string',
