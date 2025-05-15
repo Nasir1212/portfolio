@@ -160,13 +160,28 @@
             margin: 0;
             padding-left: 20px;
         }
-       
+       .cursor-circle {
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #3498db;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s linear;
+  z-index: 9999;
+}
     </style>
    
 
 </head>
 
 <body>
+
+     <div class="cursor-circle"></div>
     
     <div id="colorlib-page">
         <div class="container-wrap">
@@ -276,6 +291,23 @@
                 });
             @endif
         });
+        const circle = document.querySelector('.cursor-circle');
+let mouseX = 0, mouseY = 0;
+let currentX = 0, currentY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function animate() {
+  currentX += (mouseX - currentX) * 0.1;
+  currentY += (mouseY - currentY) * 0.1;
+  circle.style.transform = `translate(${currentX}px, ${currentY}px)`;
+  requestAnimationFrame(animate);
+}
+animate();
+
     </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
